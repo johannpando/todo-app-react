@@ -5,8 +5,10 @@ import api from '../services/api';
 const TodoForm = ({ onTodoAdded }) => {
     const [title, setTitle] = useState('');
     const [error, setError] = useState('');
+    // useref: Se usa para referenciar el campo de entrada y devolverle el foco después de añadir una tarea.
     const inputRef = useRef(null);
 
+    // Maneja el evento de envío del formulario para crear una nueva tarea.
     const handleSubmit = (e) => {
         e.preventDefault();
 

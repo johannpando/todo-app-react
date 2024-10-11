@@ -8,6 +8,7 @@ const TodoList = ({ todos, onToggleComplete, onDelete }) => {
             <h2>Lista de Tareas</h2>
             <ul>
                 {todos.map(todo => (
+                    // Recorre la lista de tareas para renderizar cada una con el componente TodoItem.
                     <TodoItem
                         key={todo.id}
                         todo={todo}

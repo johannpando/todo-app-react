@@ -9,6 +9,8 @@ const TodoItem = ({ todo, onToggleComplete, onDelete }) => {
             <input
                 type="checkbox"
                 checked={todo.completed}
+                // onToggleComplete y onDelete: 
+                // Son funciones que se pasan desde el componente App para manejar la lógica de marcado y eliminación de tareas
                 onChange={() => onToggleComplete(todo.id, !todo.completed)}
                 style={styles.checkbox}
             />

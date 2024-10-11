@@ -2,11 +2,15 @@
 import React, { useState, useEffect } from 'react';
 import TodoList from './components/TodoList';
 import TodoForm from './components/TodoForm';
-import api from './services/api';
+import api from './services/api'; // Axios configurado para solicitudes HTTP
 
+// El archivo App.js es el componente principal de la aplicación, y generalmente actúa como un contenedor para otros componentes.
 function App() {
-    const [todos, setTodos] = useState([]);
-    const [warning, setWarning] = useState('');
+    // useState: Permite crear y gestionar el estado en un componente funcional.
+    // useEffect: Es un hook que se usa para realizar efectos secundarios, como llamadas a APIs, 
+    // cuando el componente se monta o cuando se actualizan dependencias.
+    const [todos, setTodos] = useState([]); // Estado para la lista de tareas
+    const [warning, setWarning] = useState(''); // Estado para los mensajes de advertencia
 
     // Cargar las tareas cuando el componente se monta
     useEffect(() => {
@@ -22,7 +26,7 @@ function App() {
     }, []);
 
     const handleTodoAdded = (newTodo) => {
-        setTodos([...todos, newTodo]);
+        setTodos([...todos, newTodo]); // Añadir nueva tarea al estado
     };
 
     const handleToggleComplete = (id, completed) => {
