@@ -4,6 +4,7 @@ import TodoList from './components/TodoList';
 import TodoForm from './components/TodoForm';
 import api from './services/api';
 import { Todo } from './types/Todo';
+import { title } from 'process';
 
 
 const App: React.FC = () => {
@@ -26,11 +27,33 @@ const App: React.FC = () => {
         setTodos([...todos, newTodo]);
     };
 
-    const handleToggleComplete = (id: number, completed: boolean) => {
-        api.put<Todo>(`/${id}`, { completed })
+    /*const handleToggleComplete = (id: number, completed: boolean) => {
+        api.put<Todo>(`/${id}`, { completed, title })
             .then(response => {
                 setTodos(todos.map(todo =>
                     todo.id === id ? { ...todo, completed: response.data.completed } : todo
+                ));
+            })
+            .catch(error => {
+                console.error('Error al actualizar la tarea:', error);
+                setWarning('No se pudo actualizar la tarea. Por favor, verifica la conexión con el servidor.');
+            });
+    };*/
+
+    const handleToggleComplete = (id: number, completed: boolean) => {
+        // Encuentra la tarea a actualizar para obtener el título
+        const todoToUpdate = todos.find(todo => todo.id === id);
+        if (!todoToUpdate) {
+            setWarning('Tarea no encontrada.');
+            return;
+        }
+    
+        // Envía la solicitud de actualización con el título y el estado completado
+        api.put<Todo>(`/${id}`, { title: todoToUpdate.title, completed })
+            .then(response => {
+                // Actualiza el estado con la tarea modificada
+                setTodos(todos.map(todo =>
+                    todo.id === id ? response.data : todo
                 ));
             })
             .catch(error => {
