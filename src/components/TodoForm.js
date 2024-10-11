@@ -1,7 +1,8 @@
-import React, {useState} from "react";
-import api from "../services/api";
+// src/components/TodoForm.js
+import React, { useState } from 'react';
+import api from '../services/api';
 
-const TodoForm = ( { onTodoAdded } ) => {
+const TodoForm = ({ onTodoAdded }) => {
     const [title, setTitle] = useState('');
 
     const handleSubmit = (e) => {
@@ -10,7 +11,7 @@ const TodoForm = ( { onTodoAdded } ) => {
         // Crear una nueva tarea
         api.post('', { title, completed: false })
             .then(response => {
-                onTodoAdded(response.data);
+                onTodoAdded(response.data); // Notifica al componente App sobre la nueva tarea
                 setTitle('');
             })
             .catch(error => {

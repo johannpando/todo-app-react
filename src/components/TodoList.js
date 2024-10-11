@@ -1,22 +1,8 @@
 // src/components/TodoList.js
-import React, { useEffect, useState } from 'react';
-import api from '../services/api';
+import React from 'react';
 import TodoItem from './TodoItem';
 
-const TodoList = () => {
-    const [todos, setTodos] = useState([]);
-
-    // Cargar las tareas cuando el componente se monta
-    useEffect(() => {
-        api.get('')
-            .then(response => {
-                setTodos(response.data); // Asegúrate de que la respuesta sea un array
-            })
-            .catch(error => {
-                console.error('Error fetching todos:', error);
-            });
-    }, []);
-
+const TodoList = ({ todos }) => {
     return (
         <div>
             <h2>Lista de Tareas</h2>
