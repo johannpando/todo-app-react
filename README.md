@@ -1,70 +1,37 @@
-# Getting Started with Create React App
+# Aplicación TODO con React y Spring Boot
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este proyecto es una aplicación TODO construida con React en el frontend y Spring Boot en el backend. La aplicación permite a los usuarios gestionar una lista de tareas, donde pueden añadir nuevas tareas, marcarlas como completadas o pendientes, y eliminarlas. El backend en Spring Boot se encarga de la lógica del negocio y la persistencia de datos.
 
-## Available Scripts
+## Características
 
-In the project directory, you can run:
+- **Añadir Tareas**: Los usuarios pueden añadir nuevas tareas a la lista.
+- **Marcar como Completadas/Pendientes**: Cada tarea puede ser marcada como completada o pendiente usando un checkbox.
+- **Eliminar Tareas**: Los usuarios pueden eliminar tareas de la lista.
+- **Persistencia de Datos**: Las tareas se almacenan en una base de datos a través de un backend en Spring Boot.
 
-### `npm start`
+## Tecnologías Utilizadas
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Frontend
+- **React**: Biblioteca de JavaScript para construir la interfaz de usuario.
+- **Axios**: Para manejar las solicitudes HTTP al backend.
+- **Font Awesome**: Para los iconos utilizados en la interfaz.
+- **CSS**: Para los estilos de la aplicación.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Backend
+- **Spring Boot**: Framework para el desarrollo del backend en Java.
+- **H2 Database**: Base de datos en memoria para pruebas y desarrollo.
+- **JPA (Java Persistence API)**: Para la persistencia de datos y la manipulación de la base de datos.
 
-### `npm test`
+## Requisitos Previos
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Para ejecutar esta aplicación, debes tener instalados los siguientes programas:
+- **Node.js y npm**: Para ejecutar el frontend en React.
+- **Java 8+ y Maven**: Para ejecutar el backend en Spring Boot.
 
-### `npm run build`
+## Instalación y Configuración
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 1. Clonar el Repositorio
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+git clone https://github.com/usuario/todo-app.git
+cd todo-app
