@@ -1,0 +1,6 @@
+# Ignorar node_modules
+node_modules/
+
+# Otras carpetas o archivos que quieras ignorar
+dist/
+.env
